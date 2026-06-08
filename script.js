@@ -72,10 +72,16 @@ document.addEventListener('DOMContentLoaded', () => {
         `).join('');
 
         const card = document.createElement('div');
-        card.className = `package-card glass-card rounded-3xl p-8 relative fade-in-up stagger-${index + 1} flex flex-col h-full`;
+
+        // تحديد اتجاه الحركة لكل بطاقة (0 هي الأولى، 1 هي الثانية، 2 هي الثالثة)
+        let animClass = 'fade-in-up';
+        if (index === 0 || index === 2) animClass = 'fade-in-left';
+        if (index === 1) animClass = 'fade-in-right';
+
+        card.className = `package-card glass-card rounded-3xl p-8 relative ${animClass} stagger-${index + 1} flex flex-col h-full`;
 
         card.innerHTML = `
-            <div class="mb-8 relative z-10">
+            <div class="mb-8 relative z-10 text-center">
                 <h3 class="text-xl text-accent-red font-bold mb-2 tracking-wide">${pkg.subtitle}</h3>
                 <h2 class="text-3xl font-extrabold text-white mb-4">${pkg.name}</h2>
                 <p class="text-slate-400 text-sm h-12 leading-relaxed opacity-80">${pkg.description}</p>
@@ -122,7 +128,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, observerOptions);
 
-    document.querySelectorAll('.fade-in-up').forEach(element => {
+    // تفعيل المراقبة لجميع الحركات الجديدة
+    document.querySelectorAll('.fade-in-up, .fade-in-left, .fade-in-right').forEach(element => {
         observer.observe(element);
     });
 
