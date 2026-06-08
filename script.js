@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    
+
     // --- 1. Navigation Scroll Effect ---
     const nav = document.querySelector('nav');
     window.addEventListener('scroll', () => {
@@ -14,46 +14,44 @@ document.addEventListener('DOMContentLoaded', () => {
     const packagesData = [
         {
             id: 'basic',
-            name: 'الباقة الأساسية',
-            subtitle: 'ذكريات',
+            name: 'لمة لحباب',
+            subtitle: 'صور فقط',
             price: '5000دج (500ألف)',
             popular: false,
-            description: 'مثالية لتوثيق اللحظات الأساسية بجمال وبساطة، صور تخلد فرحتك.',
+            description: 'توثيق دافئ لأجمل لحظاتك مع العائلة والأصدقاء بصور احترافية.',
             features: [
-                'جلسة تصوير بورتريه احترافية (عدسة 50mm)',
-                'صور جماعية مع الأهل والأصدقاء',
-                'تغطية كاملة لحدث المناقشة داخل القاعة',
+                'صور بورتريه احترافية تبرز فرحتك (عدسة 50mm)',
+                'لقطات عفوية توثق فرحة العائلة والأصدقاء',
+                'تغطية كاملة لأجواء المناقشة داخل القاعة',
                 'تعديل الألوان وتصفية الصور (Color Grading)'
             ]
         },
         {
             id: 'premium',
-            name: 'باقة الامتياز',
-            subtitle: 'سينمائي',
-            price: '9000دج (900ألف)',
+            name: 'اللحظة السينمائية',
+            subtitle: 'تريند',
+            price: '6500دج (650ألف)',
             popular: false,
-            description: 'تجربة متكاملة تركز على المشاعر واللحظات العفوية لفيلم لا يُنسى.',
+            description: 'فيديو ريلز احترافي مع لقطات درون، مثالي للسوشيال ميديا.',
             features: [
-                'جميع مميزات الباقة الأساسية',
-                'فيديو Reels سينمائي (دقيقة واحدة)',
-                'تصوير فيديو مانع للاهتزاز (Gimbal Stabilization)',
-                'مقابلات عفوية ومشاعر الأهل (مايكروفون لاسلكي)',
-                'تسجيل صوتي احترافي للمناقشة'
+                'فيديو "ريلز" سينمائي يخطف الأنفاس',
+                'جلسة تصوير بورتريه (عدسة 50mm)',
+                'لقطات جوية إبداعية بالدرون',
+                'موسيقى ومؤثرات صوتية تلامس المشاعر'
             ]
         },
         {
             id: 'vip',
-            name: 'باقة الـ VIP',
-            subtitle: 'الذهبية',
-            price: '15000دج (مليون و500ألف)',
+            name: 'الذكرى الخالدة',
+            subtitle: 'الـ VIP',
+            price: '13000دج (مليون و300ألف)',
             popular: false,
-            description: 'التجربة القصوى والأكثر فخامة لتوثيق مميز، من السماء إلى الأرض.',
+            description: 'التغطية الشاملة والمثالية لتوثيق يومك من البداية إلى النهاية.',
             features: [
-                'جميع مميزات باقة الامتياز',
-                'لقطات جوية احترافية مبهرة (Drone)',
-                'جلسة تصوير خارجية حصرية (Outdoor)',
-                'إخراج سينمائي متكامل للفيلم',
-                'إدارة إضاءة احترافية مخصصة وتوجيه فنّي'
+                'تغطية شاملة من فريقنا المتكامل (تصوير + فيديو + درون)',
+                'تسجيل مقابلات عفوية مع الوالدين والأحباب',
+                'مرافقة كاملة من كواليس التحضيرات إلى الاحتفال الخارجي',
+                'أولوية في المونتاج وتسليم سريع للعمل'
             ]
         }
     ];
@@ -75,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const card = document.createElement('div');
         card.className = `package-card glass-card rounded-3xl p-8 relative fade-in-up stagger-${index + 1} flex flex-col h-full`;
-        
+
         card.innerHTML = `
             <div class="mb-8 relative z-10">
                 <h3 class="text-xl text-accent-red font-bold mb-2 tracking-wide">${pkg.subtitle}</h3>
@@ -136,7 +134,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     form.addEventListener('submit', (e) => {
         e.preventDefault();
-        
+
         // Show loading state
         submitBtn.disabled = true;
         btnText.style.opacity = '0';
@@ -148,11 +146,11 @@ document.addEventListener('DOMContentLoaded', () => {
             submitBtn.disabled = false;
             btnText.style.opacity = '1';
             btnLoader.classList.add('hidden');
-            
+
             // Native Alert (Can be replaced with a beautiful custom modal)
             alert('تم استلام طلبك بنجاح! شكراً لاختيارك CINEPRO، سنتواصل معك قريباً لتأكيد التفاصيل.');
             form.reset();
-            
+
             // Reset select visual state
             packageSelect.selectedIndex = 0;
         }, 2000);
@@ -160,13 +158,13 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // Global function to handle package selection from cards
-window.selectPackage = function(packageId) {
+window.selectPackage = function (packageId) {
     const select = document.getElementById('packageSelect');
     select.value = packageId;
-    
+
     // Smooth scroll to form section
     document.getElementById('booking').scrollIntoView({ behavior: 'smooth' });
-    
+
     // Highlight effect on select input to draw user's attention
     setTimeout(() => {
         select.focus();
