@@ -212,10 +212,10 @@
 
                     <div class="pt-6">
                         <button type="submit" id="submitBtn"
-                            class="w-full btn-glowing relative overflow-hidden px-8 py-4 rounded-xl text-white font-bold text-lg bg-gradient-to-r from-yellow-500 to-yellow-700 hover:from-yellow-400 hover:to-yellow-600 transition-all flex items-center justify-center">
+                            class="w-full btn-glowing relative overflow-hidden px-8 py-4 rounded-xl text-white font-bold text-lg bg-gradient-to-r from-[#FF003C] to-red-800 hover:from-red-500 hover:to-[#FF003C] transition-all flex items-center justify-center shadow-[0_0_20px_rgba(255,0,60,0.4)] hover:shadow-[0_0_30px_rgba(255,0,60,0.8)]">
                             <span id="btnText">تأكيد الحجز الآن</span>
                             <div id="btnLoader"
-                                class="hidden absolute inset-0 flex items-center justify-center bg-yellow-600 rounded-xl">
+                                class="hidden absolute inset-0 flex items-center justify-center bg-red-600 rounded-xl">
                                 <svg class="animate-spin h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg"
                                     fill="none" viewBox="0 0 24 24">
                                     <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor"
@@ -236,18 +236,23 @@
     <footer
         class="border-t border-white/10 py-10 text-center text-slate-400 text-sm mt-10 z-10 relative bg-[#050810]/50 backdrop-blur-md">
         <div class="max-w-7xl mx-auto px-6">
-            <p class="mb-2 text-xl font-bold tracking-widest uppercase text-white">CINE<span
-                    class="text-accent-gold">PRO</span></p>
+            <p class="mb-2 text-xl font-black tracking-widest uppercase text-white font-sans">CINEMA<span
+                    class="text-[#FF003C] drop-shadow-[0_0_12px_rgba(255,0,60,0.9)]">PRO</span></p>
             <p>© 2026 جميع الحقوق محفوظة.</p>
         </div>
     </footer>
 
     <!-- Scripts -->
     <script>
-        if (history.scrollRestoration) {
+        if ('scrollRestoration' in history) {
             history.scrollRestoration = 'manual';
         }
-        window.scrollTo(0, 0);
+        window.addEventListener('beforeunload', function () {
+            window.scrollTo(0, 0);
+        });
+        window.onload = function () {
+            window.scrollTo(0, 0);
+        }
     </script>
     <script src="script.js"></script>
 </body>
