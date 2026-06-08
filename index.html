@@ -43,18 +43,22 @@
 
 <body class="bg-carbon text-white font-sans antialiased overflow-x-hidden relative min-h-screen">
 
-    <!-- Background Ambient Gradients (positioned to melt across section boundaries) -->
+    <!-- Background Ambient Gradients (positioned to backlight and melt across section boundaries) -->
     <div class="fixed inset-0 z-[-1] overflow-hidden pointer-events-none">
-        <!-- Top-left carbon glow -->
-        <div class="absolute top-[-10%] left-[-10%] w-[40vw] h-[40vw] rounded-full bg-carbon-light opacity-50 blur-[100px]"></div>
+        <!-- Backlight for Hero Text & Subjects (warm gold/red glow) -->
+        <div class="absolute top-[10%] md:top-[30%] left-[50%] transform -translate-x-1/2 w-[80vw] md:w-[40vw] h-[40vw] rounded-full bg-accent-gold/10 opacity-50 blur-[130px]"></div>
+        
         <!-- Warm red subtle warmth (very low opacity, high blur) -->
-        <div class="absolute bottom-[-5%] right-[-5%] w-[50vw] h-[50vw] rounded-full bg-warm-red/5 opacity-20 blur-[150px]"></div>
-        <!-- Gold glow bridging Hero ↔ Packages -->
-        <div class="absolute top-[70%] left-[20%] w-[40vw] h-[40vw] rounded-full bg-accent-gold/5 opacity-30 blur-[140px]"></div>
+        <div class="absolute bottom-[20%] right-[-10%] w-[50vw] h-[50vw] rounded-full bg-warm-red/10 opacity-20 blur-[150px]"></div>
+        
+        <!-- Backlight for Feature Cards -->
+        <div class="absolute top-[60%] left-[50%] transform -translate-x-1/2 w-[70vw] h-[70vw] rounded-full bg-accent-gold/5 opacity-30 blur-[150px]"></div>
+        
         <!-- Navy glow bridging Packages ↔ Team -->
         <div class="absolute top-[140%] right-[10%] w-[35vw] h-[35vw] rounded-full bg-royal-navy/30 opacity-40 blur-[120px]"></div>
+        
         <!-- Gold glow bridging Team ↔ Booking -->
-        <div class="absolute top-[210%] left-[40%] w-[30vw] h-[30vw] rounded-full bg-accent-gold/4 opacity-20 blur-[130px]"></div>
+        <div class="absolute top-[210%] left-[40%] w-[30vw] h-[30vw] rounded-full bg-accent-gold/5 opacity-20 blur-[130px]"></div>
     </div>
 
     <!-- Navigation -->
@@ -73,15 +77,10 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="hero" class="relative min-h-screen flex items-center justify-center pt-20 px-4 overflow-hidden">
-        <!-- Background Image (object-contain to prevent cropping) -->
-        <img src="assets/1.png" alt="Graduation Background"
-            class="absolute inset-0 w-full h-full max-h-[90vh] object-contain object-center z-0 slide-up-img mt-20 mx-auto">
-        <!-- Gradient Overlay (seamless melt into body) -->
-        <div class="absolute inset-0 bg-gradient-to-b from-[#0c0c10]/70 via-black/50 to-transparent z-[1]"></div>
-
-        <div class="max-w-4xl mx-auto text-center z-10 relative">
-            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight slide-down-text">
+    <section id="hero" class="relative min-h-screen flex flex-col md:block pt-32 md:pt-0 overflow-hidden">
+        <!-- Text Container (Above image on mobile, centered overlay on desktop with side padding) -->
+        <div class="w-full text-center z-10 relative px-6 pb-12 md:pb-0 md:absolute md:inset-0 md:flex md:flex-col md:justify-center md:items-center md:px-[20%]">
+            <h1 class="text-3xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight slide-down-text">
                 وثّق لحظة تخرجك <br>
                 <span class="text-transparent bg-clip-text bg-gradient-to-r from-accent-gold-light to-accent-gold">بلمسة سينمائية</span>
             </h1>
@@ -93,6 +92,14 @@
                 class="btn-glowing inline-block px-10 py-4 rounded-full text-carbon font-bold text-lg bg-gradient-to-r from-yellow-500 to-yellow-700 hover:from-yellow-400 hover:to-yellow-600 transition-all shadow-[0_0_20px_rgba(212,175,55,0.4)] hover:shadow-[0_0_30px_rgba(212,175,55,0.7)]">
                 احجز باقتك الآن
             </a>
+        </div>
+
+        <!-- Background Image Container (Takes remaining height on mobile, absolute full cover on desktop) -->
+        <div class="w-full flex-grow relative md:absolute md:inset-0 z-0 min-h-[50vh] md:min-h-screen mt-auto md:mt-0">
+            <img src="assets/backround.png" alt="Graduation Background"
+                class="absolute inset-0 w-full h-full object-cover object-center slide-up-img">
+            <!-- Gradient Overlay (Seamless melt into body) -->
+            <div class="absolute inset-0 bg-gradient-to-b from-[#0c0c10]/80 via-transparent to-[#0c0c10] z-[1]"></div>
         </div>
     </section>
 

@@ -25,14 +25,7 @@ body {
   background-size: 100% 300vh;
 }
 
-/* Hero image: prevent cropping on mobile */
-@media (max-width: 768px) {
-  #hero img {
-    object-fit: contain !important;
-    max-height: 70vh;
-    margin-top: 5rem;
-  }
-}
+
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
