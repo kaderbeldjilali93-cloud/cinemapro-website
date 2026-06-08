@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         card.innerHTML = `
             <div class="mb-8 relative z-10">
-                <h3 class="text-xl text-accent-gold font-bold mb-2 tracking-wide">${pkg.subtitle}</h3>
+                <h3 class="text-xl text-accent-red font-bold mb-2 tracking-wide">${pkg.subtitle}</h3>
                 <h2 class="text-3xl font-extrabold text-white mb-4">${pkg.name}</h2>
                 <p class="text-slate-400 text-sm h-12 leading-relaxed opacity-80">${pkg.description}</p>
             </div>
@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
             </ul>
             
             <div class="mt-auto relative z-10">
-                <button onclick="selectPackage('${pkg.id}')" class="w-full py-4 rounded-xl font-bold transition-all text-lg bg-white/5 text-white hover:bg-white/10 border border-white/10 hover:border-accent-gold/50">
+                <button onclick="selectPackage('${pkg.id}')" class="w-full py-4 rounded-xl font-bold transition-all text-lg bg-white/5 text-white hover:bg-white/10 border border-white/10 hover:border-accent-red/50">
                     اختيار الباقة
                 </button>
             </div>
@@ -170,10 +170,10 @@ window.selectPackage = function(packageId) {
     // Highlight effect on select input to draw user's attention
     setTimeout(() => {
         select.focus();
-        select.classList.add('ring-4', 'ring-accent-gold/50', 'border-accent-gold');
+        select.classList.add('ring-4', 'ring-accent-red/50', 'border-accent-red');
         setTimeout(() => {
             select.blur();
-            select.classList.remove('ring-4', 'ring-accent-gold/50', 'border-accent-gold');
+            select.classList.remove('ring-4', 'ring-accent-red/50', 'border-accent-red');
         }, 1500);
     }, 500); // small delay to let scroll finish
 };
