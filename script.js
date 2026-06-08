@@ -139,30 +139,105 @@ document.addEventListener('DOMContentLoaded', () => {
     const btnText = document.getElementById('btnText');
     const btnLoader = document.getElementById('btnLoader');
 
-    form.addEventListener('submit', (e) => {
+    // --- 4. Form Handling & Telegram Integration ---
+    const form = document.getElementById('booking-form');
+    const submitBtn = document.getElementById('submitBtn');
+    const btnText = document.getElementById('btnText');
+    const btnLoader = document.getElementById('btnLoader');
+
+    form.addEventListener('submit', async (e) => {
         e.preventDefault();
 
-        // Show loading state
+        // إظهار حالة التحميل للزر
         submitBtn.disabled = true;
         btnText.style.opacity = '0';
         btnLoader.classList.remove('hidden');
 
-        // Simulate API call / Email sending delay
-        setTimeout(() => {
-            // Revert loading state
+        // جلب البيانات من حقول الفورم
+        const fullName = document.getElementById('fullName').value;
+        const whatsapp = document.getElementById('whatsapp').value;
+        const university = document.getElementById('university').value;
+        const date = document.getElementById('date').value;
+
+        // جلب اسم الباقة بدلاً من الـ ID تاعها
+        const packageSelect = document.getElementById('packageSelect');
+        const packageName = packageSelect.options[packageSelect.selectedIndex].text;
+
+        // ==========================================
+        const telegramBotToken = '8807976727:AAHkwNZSg9P7Go5cprUE7KQbGce11eo6S2Y'
+        const chatId = '1491880675'
+        // ==========================================
+
+        // تصميم الرسالة اللي راح توصلك في التليغرام
+        const message = `
+🎓 <b>طلب حجز جديد (CINEPRO)</b> 🎓
+
+👤 <b>الاسم:</b> ${fullName}
+📱 <b>الواتساب:</b> ${whatsapp}
+🏫 <b>الجامعة:</b> ${university}
+📅 <b>تاريخ المناقشة:</b> ${date}
+📦 <b>الباقة المختارة:</b> ${packageName}
+        `;
+
+        const url = `https://api.telegram.org/bot${telegramBotToken}/sendMessage`;
+
+        try {
+            // إرسال البيانات عبر API تيليجرام
+            const response = await fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    chat_id: chatId,
+                    text: message,
+                    parse_mode: 'HTML' // باش تظهر الرسالة منسقة و Bold
+                })
+            });
+
+            if (response.ok) {
+                // إرجاع الزر لحالته الطبيعية
+                submitBtn.disabled = false;
+                btnText.style.opacity = '1';
+                btnLoader.classList.add('hidden');
+
+                // رسالة نجاح الحجز
+                alert('تم استلام طلبك بنجاح! شكراً لاختيارك CINEPRO، سنتواصل معك قريباً لتأكيد التفاصيل.');
+
+                // تفريغ الفورم
+                form.reset();
+                packageSelect.selectedIndex = 0;
+            } else {
+                throw new Error('فشل في الإرسال');
+            }
+        } catch (error) {
+            // في حالة وجود خطأ (مثلاً انقطاع الأنترنت)
             submitBtn.disabled = false;
             btnText.style.opacity = '1';
             btnLoader.classList.add('hidden');
-
-            // Native Alert (Can be replaced with a beautiful custom modal)
-            alert('تم استلام طلبك بنجاح! شكراً لاختيارك CINEPRO، سنتواصل معك قريباً لتأكيد التفاصيل.');
-            form.reset();
-
-            // Reset select visual state
-            packageSelect.selectedIndex = 0;
-        }, 2000);
+            alert('عذراً، حدث خطأ أثناء إرسال الطلب. يرجى المحاولة مرة أخرى أو مراسلتنا مباشرة عبر الواتساب.');
+        }
     });
 });
+
+// Global function to handle package selection from cards
+window.selectPackage = function (packageId) {
+    const select = document.getElementById('packageSelect');
+    select.value = packageId;
+
+    // Smooth scroll to form section
+    document.getElementById('booking').scrollIntoView({ behavior: 'smooth' });
+
+    // Highlight effect on select input to draw user's attention
+    setTimeout(() => {
+        select.focus();
+        select.classList.add('ring-4', 'ring-accent-red/50', 'border-accent-red');
+        setTimeout(() => {
+            select.blur();
+            select.classList.remove('ring-4', 'ring-accent-red/50', 'border-accent-red');
+        }, 1500);
+    }, 500);
+};
 
 // Global function to handle package selection from cards
 window.selectPackage = function (packageId) {
