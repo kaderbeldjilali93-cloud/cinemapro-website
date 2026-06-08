@@ -133,12 +133,6 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(element);
     });
 
-    // --- 4. Form Handling & Loading State ---
-    const form = document.getElementById('booking-form');
-    const submitBtn = document.getElementById('submitBtn');
-    const btnText = document.getElementById('btnText');
-    const btnLoader = document.getElementById('btnLoader');
-
     // --- 4. Form Handling & Telegram Integration ---
     const form = document.getElementById('booking-form');
     const submitBtn = document.getElementById('submitBtn');
@@ -237,23 +231,4 @@ window.selectPackage = function (packageId) {
             select.classList.remove('ring-4', 'ring-accent-red/50', 'border-accent-red');
         }, 1500);
     }, 500);
-};
-
-// Global function to handle package selection from cards
-window.selectPackage = function (packageId) {
-    const select = document.getElementById('packageSelect');
-    select.value = packageId;
-
-    // Smooth scroll to form section
-    document.getElementById('booking').scrollIntoView({ behavior: 'smooth' });
-
-    // Highlight effect on select input to draw user's attention
-    setTimeout(() => {
-        select.focus();
-        select.classList.add('ring-4', 'ring-accent-red/50', 'border-accent-red');
-        setTimeout(() => {
-            select.blur();
-            select.classList.remove('ring-4', 'ring-accent-red/50', 'border-accent-red');
-        }, 1500);
-    }, 500); // small delay to let scroll finish
 };
