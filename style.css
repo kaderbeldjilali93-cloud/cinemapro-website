@@ -11,11 +11,27 @@ html {
 }
 
 body {
-  /* Carbon Black base with subtle warm ambient gradients */
-  background-color: #0A0A0A;
-  background-image: radial-gradient(at 0% 0%, rgba(20, 20, 20, 0.8) 0, transparent 50%), 
-                    radial-gradient(at 100% 0%, rgba(212, 175, 55, 0.04) 0, transparent 50%);
+  /* Rich dark gradient — charcoal blending into deep navy/carbon (no solid black) */
+  background: linear-gradient(
+    180deg, 
+    #0c0c10 0%,       /* Deep charcoal */
+    #0a0e18 20%,      /* Hint of navy */
+    #0d0d14 40%,      /* Carbon blend */
+    #0a0f1a 60%,      /* Deep navy */
+    #0c0c10 80%,      /* Back to charcoal */
+    #0a0a0f 100%      /* Soft carbon */
+  );
   background-attachment: fixed;
+  background-size: 100% 300vh;
+}
+
+/* Hero image: prevent cropping on mobile */
+@media (max-width: 768px) {
+  #hero img {
+    object-fit: contain !important;
+    max-height: 70vh;
+    margin-top: 5rem;
+  }
 }
 
 /* Custom Scrollbar */
@@ -23,7 +39,7 @@ body {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #0A0A0A;
+  background: #0c0c10;
 }
 ::-webkit-scrollbar-thumb {
   background: rgba(212, 175, 55, 0.3);

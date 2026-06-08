@@ -43,17 +43,18 @@
 
 <body class="bg-carbon text-white font-sans antialiased overflow-x-hidden relative min-h-screen">
 
-    <!-- Background Ambient Gradients -->
+    <!-- Background Ambient Gradients (positioned to melt across section boundaries) -->
     <div class="fixed inset-0 z-[-1] overflow-hidden pointer-events-none">
-        <div
-            class="absolute top-[-10%] left-[-10%] w-[40vw] h-[40vw] rounded-full bg-carbon-light opacity-50 blur-[100px]">
-        </div>
-        <div
-            class="absolute bottom-[-10%] right-[-10%] w-[50vw] h-[50vw] rounded-full bg-warm-red/5 opacity-30 blur-[120px]">
-        </div>
-        <div
-            class="absolute top-[40%] left-[60%] w-[30vw] h-[30vw] rounded-full bg-accent-gold/5 opacity-25 blur-[120px]">
-        </div>
+        <!-- Top-left carbon glow -->
+        <div class="absolute top-[-10%] left-[-10%] w-[40vw] h-[40vw] rounded-full bg-carbon-light opacity-50 blur-[100px]"></div>
+        <!-- Warm red subtle warmth (very low opacity, high blur) -->
+        <div class="absolute bottom-[-5%] right-[-5%] w-[50vw] h-[50vw] rounded-full bg-warm-red/5 opacity-20 blur-[150px]"></div>
+        <!-- Gold glow bridging Hero ↔ Packages -->
+        <div class="absolute top-[70%] left-[20%] w-[40vw] h-[40vw] rounded-full bg-accent-gold/5 opacity-30 blur-[140px]"></div>
+        <!-- Navy glow bridging Packages ↔ Team -->
+        <div class="absolute top-[140%] right-[10%] w-[35vw] h-[35vw] rounded-full bg-royal-navy/30 opacity-40 blur-[120px]"></div>
+        <!-- Gold glow bridging Team ↔ Booking -->
+        <div class="absolute top-[210%] left-[40%] w-[30vw] h-[30vw] rounded-full bg-accent-gold/4 opacity-20 blur-[130px]"></div>
     </div>
 
     <!-- Navigation -->
@@ -73,19 +74,18 @@
 
     <!-- Hero Section -->
     <section id="hero" class="relative min-h-screen flex items-center justify-center pt-20 px-4 overflow-hidden">
-        <!-- Background Image -->
+        <!-- Background Image (object-contain to prevent cropping) -->
         <img src="assets/1.png" alt="Graduation Background"
-            class="absolute inset-0 w-full h-full object-cover object-center z-0 slide-up-img">
-        <!-- Gradient Overlay -->
-        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-black/60 to-[#0A0A0A] z-[1]"></div>
+            class="absolute inset-0 w-full h-full max-h-[90vh] object-contain object-center z-0 slide-up-img mt-20 mx-auto">
+        <!-- Gradient Overlay (seamless melt into body) -->
+        <div class="absolute inset-0 bg-gradient-to-b from-[#0c0c10]/70 via-black/50 to-transparent z-[1]"></div>
 
         <div class="max-w-4xl mx-auto text-center z-10 relative">
-            <h1 class="text-5xl md:text-7xl font-extrabold mb-6 leading-tight slide-down-text">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight slide-down-text">
                 وثّق لحظة تخرجك <br>
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-accent-gold-light to-accent-gold">بلمسة
-                    سينمائية</span>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-accent-gold-light to-accent-gold">بلمسة سينمائية</span>
             </h1>
-            <p class="text-lg md:text-2xl text-gray-300 mb-10 max-w-2xl mx-auto font-light leading-relaxed slide-down-text"
+            <p class="text-base md:text-xl text-gray-300 mb-10 max-w-2xl mx-auto font-light leading-relaxed slide-down-text"
                 style="animation-delay: 0.15s;">
                 تصوير احترافي، فيديوهات سينمائية، ولقطات جوية تخلّد أجمل أيام حياتك.
             </p>
@@ -95,6 +95,9 @@
             </a>
         </div>
     </section>
+
+    <!-- Melting transition: Hero → Packages -->
+    <div class="relative h-24 -mt-24 z-[2] pointer-events-none bg-gradient-to-b from-transparent to-[#0c0c10]"></div>
 
     <!-- Packages Section -->
     <section id="packages" class="py-24 px-4 relative z-10">
@@ -110,8 +113,11 @@
         </div>
     </section>
 
+    <!-- Melting transition: Packages → Team -->
+    <div class="relative h-20 -mt-10 z-[2] pointer-events-none bg-gradient-to-b from-transparent to-[#0c0c10]/50"></div>
+
     <!-- Team Showcase Section -->
-    <section id="team" class="py-24 px-4 relative z-10">
+    <section id="team" class="py-24 px-4 relative z-10 bg-gradient-to-b from-transparent via-transparent to-transparent">
         <div class="max-w-6xl mx-auto relative fade-in-up">
             <div
                 class="absolute -inset-1 bg-gradient-to-r from-accent-gold/15 to-carbon/30 rounded-3xl blur-xl opacity-60">
@@ -138,6 +144,9 @@
             </div>
         </div>
     </section>
+
+    <!-- Melting transition: Team → Booking -->
+    <div class="relative h-20 -mt-10 z-[2] pointer-events-none bg-gradient-to-b from-transparent to-[#0c0c10]/30"></div>
 
     <!-- Booking Form Section -->
     <section id="booking" class="py-24 px-4 relative z-10">
