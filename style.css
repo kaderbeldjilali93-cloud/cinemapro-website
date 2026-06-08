@@ -21,14 +21,18 @@ html {
 
 body {
   /* Deep & profound gradient — harmonizing with the cinematic hero image */
-  background: linear-gradient(
-    180deg,
-    #050810 0%,       /* Extremely deep charcoal/black */
-    #0a1128 25%,      /* Deep navy */
-    #050814 50%,      /* Midnight charcoal */
-    #0a1020 75%,      /* Rich dark navy */
-    #03050a 100%      /* Profound black */
-  );
+  background: linear-gradient(180deg,
+      #050810 0%,
+      /* Extremely deep charcoal/black */
+      #0a1128 25%,
+      /* Deep navy */
+      #050814 50%,
+      /* Midnight charcoal */
+      #0a1020 75%,
+      /* Rich dark navy */
+      #03050a 100%
+      /* Profound black */
+    );
   background-attachment: fixed;
   color: var(--text-primary);
 }
@@ -37,13 +41,16 @@ body {
 ::-webkit-scrollbar {
   width: 8px;
 }
+
 ::-webkit-scrollbar-track {
   background: #050810;
 }
+
 ::-webkit-scrollbar-thumb {
   background: rgba(255, 0, 60, 0.4);
   border-radius: 4px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(255, 0, 60, 0.7);
 }
@@ -125,6 +132,7 @@ input[type="date"].color-scheme-dark::-webkit-calendar-picker-indicator {
   cursor: pointer;
   transition: opacity 0.3s ease;
 }
+
 input[type="date"].color-scheme-dark::-webkit-calendar-picker-indicator:hover {
   opacity: 1;
 }
@@ -171,10 +179,13 @@ input[type="date"].color-scheme-dark::-webkit-calendar-picker-indicator:hover {
 .package-card::before {
   content: '';
   position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   border-radius: inherit;
   padding: 1px;
-  background: linear-gradient(to bottom right, rgba(255,255,255,0.2), rgba(255,255,255,0.01));
+  background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.01));
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
@@ -192,29 +203,83 @@ input[type="date"].color-scheme-dark::-webkit-calendar-picker-indicator:hover {
 }
 
 /* ============================================
-   Custom Hero Animations
+   Custom Hero Animations (Cinematic 4s Duration)
    ============================================ */
+@keyframes zoom-in-title {
+  0% {
+    transform: scale(0.85);
+    opacity: 0;
+    filter: blur(10px);
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+@keyframes zoom-out-subtitle {
+  0% {
+    transform: scale(1.15);
+    opacity: 0;
+    filter: blur(8px);
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+@keyframes slide-up-btn {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 
 @keyframes slide-up-img {
-  0% { transform: translateY(100px); opacity: 0; }
-  100% { transform: translateY(0); opacity: 1; }
+  0% {
+    transform: translateY(60px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
-@keyframes slide-down-text {
-  0% { transform: translateY(-80px); opacity: 0; }
-  100% { transform: translateY(0); opacity: 1; }
+.hero-zoom-in {
+  animation: zoom-in-title 4s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
-.slide-up-img { animation: slide-up-img 1.2s ease-out both; }
-.slide-down-text { animation: slide-down-text 1s ease-out both; }
+.hero-zoom-out {
+  animation: zoom-out-subtitle 4s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.hero-slide-up-btn {
+  animation: slide-up-btn 4s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.slide-up-img {
+  animation: slide-up-img 2s ease-out both;
+}
 
 /* ============================================
-   Scroll Triggered Animations
+   Scroll Triggered Animations (Smooth 3s Duration)
    ============================================ */
 .fade-in-up {
   opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(60px);
+  transition: opacity 3s cubic-bezier(0.16, 1, 0.3, 1), transform 3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .fade-in-up.visible {
@@ -222,9 +287,17 @@ input[type="date"].color-scheme-dark::-webkit-calendar-picker-indicator:hover {
   transform: translateY(0);
 }
 
-.stagger-1 { transition-delay: 0.1s; }
-.stagger-2 { transition-delay: 0.2s; }
-.stagger-3 { transition-delay: 0.3s; }
+.stagger-1 {
+  transition-delay: 0.15s;
+}
+
+.stagger-2 {
+  transition-delay: 0.3s;
+}
+
+.stagger-3 {
+  transition-delay: 0.45s;
+}
 
 /* ============================================
    Custom Feature List Checkmark (Red)
@@ -242,4 +315,36 @@ input[type="date"].color-scheme-dark::-webkit-calendar-picker-indicator:hover {
   margin-left: 12px;
   flex-shrink: 0;
   border: 1px solid rgba(255, 0, 60, 0.3);
+}
+
+/* ============================================
+   3D Glassmorphic Package Button
+   ============================================ */
+.btn-glass-3d {
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-bottom: 3px solid rgba(255, 255, 255, 0.3);
+  /* يعطي عمق 3D للأسفل */
+  box-shadow:
+    0 5px 15px rgba(0, 0, 0, 0.3),
+    inset 0 1px 1px rgba(255, 255, 255, 0.2);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.btn-glass-3d:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+  border-bottom: 4px solid rgba(255, 0, 60, 0.6);
+  /* يتوهج بالأحمر عند التمرير */
+  box-shadow:
+    0 10px 25px rgba(255, 0, 60, 0.2),
+    inset 0 1px 2px rgba(255, 255, 255, 0.4);
+}
+
+.btn-glass-3d:active {
+  transform: translateY(2px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 }

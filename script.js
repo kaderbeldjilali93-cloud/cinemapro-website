@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
             </ul>
             
             <div class="mt-auto relative z-10">
-                <button onclick="selectPackage('${pkg.id}')" class="w-full py-4 rounded-xl font-bold transition-all text-lg bg-white/5 text-white hover:bg-white/10 border border-white/10 hover:border-accent-red/50">
+                <button onclick="selectPackage('${pkg.id}')" class="w-full py-4 rounded-xl font-bold text-lg text-white btn-glass-3d">
                     اختيار الباقة
                 </button>
             </div>
