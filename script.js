@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
     packagesData.forEach((pkg, index) => {
         // Render Feature list
         const featuresHTML = pkg.features.map(feature => `
-            <li class="flex items-start text-slate-600 mb-4 text-sm font-medium">
+            <li class="flex items-start text-slate-300 mb-4 text-sm font-medium">
                 <span class="feature-check">
                     <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
                 </span>
@@ -79,13 +79,13 @@ document.addEventListener('DOMContentLoaded', () => {
         card.innerHTML = `
             <div class="mb-8 relative z-10">
                 <h3 class="text-xl text-accent-gold font-bold mb-2 tracking-wide">${pkg.subtitle}</h3>
-                <h2 class="text-3xl font-extrabold text-slate-800 mb-4">${pkg.name}</h2>
-                <p class="text-slate-500 text-sm h-12 leading-relaxed opacity-80">${pkg.description}</p>
+                <h2 class="text-3xl font-extrabold text-white mb-4">${pkg.name}</h2>
+                <p class="text-slate-400 text-sm h-12 leading-relaxed opacity-80">${pkg.description}</p>
             </div>
             
-            <div class="mb-8 pb-8 border-b border-black/5 relative z-10">
+            <div class="mb-8 pb-8 border-b border-white/10 relative z-10">
                 <div class="flex items-baseline justify-center gap-1">
-                    <span class="text-3xl md:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-b from-slate-800 to-slate-500">${pkg.price}</span>
+                    <span class="text-3xl md:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-b from-white to-slate-400">${pkg.price}</span>
                 </div>
             </div>
             
@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
             </ul>
             
             <div class="mt-auto relative z-10">
-                <button onclick="selectPackage('${pkg.id}')" class="w-full py-4 rounded-xl font-bold transition-all text-lg bg-white/50 text-slate-700 hover:bg-accent-gold hover:text-white border border-black/5 hover:border-accent-gold hover:shadow-[0_0_20px_rgba(212,175,55,0.2)]">
+                <button onclick="selectPackage('${pkg.id}')" class="w-full py-4 rounded-xl font-bold transition-all text-lg bg-white/5 text-white hover:bg-white/10 border border-white/10 hover:border-accent-gold/50">
                     اختيار الباقة
                 </button>
             </div>

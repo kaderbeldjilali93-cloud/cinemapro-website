@@ -1,16 +1,16 @@
 /* ============================================
-   CINEPRO — Bright iOS 3D Glassmorphism Theme
+   CINEPRO — Deep Profound 3D Glassmorphism Theme
    ============================================ */
 
 /* Base Styles & Custom Variables */
 :root {
-  --glass-bg: rgba(255, 255, 255, 0.35);
-  --glass-border: rgba(255, 255, 255, 0.6);
-  --glass-highlight: rgba(255, 255, 255, 0.8);
-  --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
-  --text-primary: #1e293b;    /* Slate 800 */
-  --text-secondary: #475569;  /* Slate 600 */
-  --text-muted: #64748b;      /* Slate 500 */
+  --glass-bg: rgba(15, 23, 42, 0.4);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-highlight: rgba(255, 255, 255, 0.3);
+  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+  --text-primary: #ffffff;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
   --gold: #D4AF37;
   --gold-light: #F3E5AB;
 }
@@ -20,26 +20,25 @@ html {
 }
 
 body {
-  /* Bright, open canvas — soft pearl/silver with frosty blue tints */
+  /* Deep & profound gradient — harmonizing with the cinematic hero image */
   background: linear-gradient(
     180deg,
-    #f0f2f5 0%,       /* Light pearl */
-    #e8ecf1 15%,      /* Silver mist */
-    #eef1f6 35%,      /* Frosty blue-gray */
-    #f5f0eb 55%,      /* Warm pearl (subtle warmth) */
-    #e8ecf4 75%,      /* Cool silver */
-    #f0f2f5 100%      /* Back to pearl */
+    #050810 0%,       /* Extremely deep charcoal/black */
+    #0a1128 25%,      /* Deep navy */
+    #050814 50%,      /* Midnight charcoal */
+    #0a1020 75%,      /* Rich dark navy */
+    #03050a 100%      /* Profound black */
   );
   background-attachment: fixed;
   color: var(--text-primary);
 }
 
-/* Custom Scrollbar (Light theme) */
+/* Custom Scrollbar (Dark theme) */
 ::-webkit-scrollbar {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #f0f2f5;
+  background: #050810;
 }
 ::-webkit-scrollbar-thumb {
   background: rgba(212, 175, 55, 0.4);
@@ -51,53 +50,52 @@ body {
 
 /* ============================================
    iOS 26 3D Glassmorphism Core Utilities
-   Heavy blur, semi-transparent white, sharp inner highlights,
-   soft drop shadows for tactile 3D depth
+   Heavy blur, semi-transparent white/silver borders, sharp inner highlights
    ============================================ */
 
 .glass-card {
-  background: rgba(255, 255, 255, 0.40);
+  background: var(--glass-bg);
   backdrop-filter: blur(30px) saturate(180%);
   -webkit-backdrop-filter: blur(30px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.65);
+  border: 1px solid var(--glass-border);
   box-shadow:
-    0 8px 32px rgba(31, 38, 135, 0.12),
-    0 2px 8px rgba(0, 0, 0, 0.06),
-    inset 0 1px 1px rgba(255, 255, 255, 0.8);
+    0 8px 32px rgba(0, 0, 0, 0.4),
+    0 2px 8px rgba(0, 0, 0, 0.2),
+    inset 0 1px 1px var(--glass-highlight);
   border-radius: 24px;
 }
 
 .glass-nav {
-  background: rgba(255, 255, 255, 0.45);
+  background: rgba(15, 23, 42, 0.5);
   backdrop-filter: blur(24px) saturate(180%);
   -webkit-backdrop-filter: blur(24px) saturate(180%);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
-  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.04);
+  border-bottom: 1px solid var(--glass-border);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
 .glass-nav.scrolled {
-  background: rgba(255, 255, 255, 0.75);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
+  background: rgba(10, 15, 30, 0.85);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.6);
   border-bottom: 1px solid rgba(212, 175, 55, 0.25);
 }
 
 .glass-form {
-  background: rgba(255, 255, 255, 0.45);
+  background: var(--glass-bg);
   backdrop-filter: blur(30px) saturate(180%);
   -webkit-backdrop-filter: blur(30px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.6);
+  border: 1px solid var(--glass-border);
   box-shadow:
-    0 20px 60px rgba(31, 38, 135, 0.10),
-    0 4px 16px rgba(0, 0, 0, 0.05),
-    inset 0 1px 1px rgba(255, 255, 255, 0.8);
+    0 20px 60px rgba(0, 0, 0, 0.6),
+    0 4px 16px rgba(0, 0, 0, 0.4),
+    inset 0 1px 1px var(--glass-highlight);
   border-radius: 24px;
 }
 
 .glass-input {
-  background: rgba(255, 255, 255, 0.5) !important;
+  background: rgba(0, 0, 0, 0.3) !important;
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(0, 0, 0, 0.08) !important;
-  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
   color: var(--text-primary) !important;
 }
 
@@ -106,27 +104,28 @@ body {
 }
 
 .glass-input:focus {
-  background: rgba(255, 255, 255, 0.7) !important;
+  background: rgba(255, 255, 255, 0.05) !important;
   border-color: rgba(212, 175, 55, 0.6) !important;
   box-shadow:
     0 0 0 3px rgba(212, 175, 55, 0.12),
-    0 0 20px rgba(212, 175, 55, 0.08),
-    inset 0 1px 2px rgba(0, 0, 0, 0.03) !important;
+    0 0 20px rgba(212, 175, 55, 0.15),
+    inset 0 1px 2px rgba(0, 0, 0, 0.1) !important;
 }
 
-/* Fix for select options in light mode */
+/* Fix for select options in dark mode */
 select.glass-input option {
-  background-color: #ffffff;
+  background-color: #0f172a;
   color: var(--text-primary);
 }
 
-/* Date picker styling for light mode */
-input[type="date"].color-scheme-light::-webkit-calendar-picker-indicator {
+/* Date picker styling for dark mode */
+input[type="date"].color-scheme-dark::-webkit-calendar-picker-indicator {
+  filter: invert(1);
   opacity: 0.6;
   cursor: pointer;
   transition: opacity 0.3s ease;
 }
-input[type="date"].color-scheme-light::-webkit-calendar-picker-indicator:hover {
+input[type="date"].color-scheme-dark::-webkit-calendar-picker-indicator:hover {
   opacity: 1;
 }
 
@@ -136,14 +135,14 @@ input[type="date"].color-scheme-light::-webkit-calendar-picker-indicator:hover {
 .btn-glowing {
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   box-shadow:
-    0 4px 15px rgba(212, 175, 55, 0.25),
+    0 4px 15px rgba(212, 175, 55, 0.3),
     inset 0 1px 1px rgba(255, 255, 255, 0.4);
 }
 
 .btn-glowing:hover {
   transform: translateY(-3px) scale(1.02);
   box-shadow:
-    0 8px 30px rgba(212, 175, 55, 0.35),
+    0 8px 30px rgba(212, 175, 55, 0.5),
     inset 0 1px 1px rgba(255, 255, 255, 0.5);
 }
 
@@ -158,14 +157,14 @@ input[type="date"].color-scheme-light::-webkit-calendar-picker-indicator:hover {
   transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
   position: relative;
   overflow: hidden;
-  background: rgba(255, 255, 255, 0.40);
+  background: var(--glass-bg);
   backdrop-filter: blur(30px) saturate(180%);
   -webkit-backdrop-filter: blur(30px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.65);
+  border: 1px solid var(--glass-border);
   box-shadow:
-    0 8px 32px rgba(31, 38, 135, 0.10),
-    0 2px 8px rgba(0, 0, 0, 0.04),
-    inset 0 1px 1px rgba(255, 255, 255, 0.8);
+    0 8px 32px rgba(0, 0, 0, 0.4),
+    0 2px 8px rgba(0, 0, 0, 0.2),
+    inset 0 1px 1px var(--glass-highlight);
 }
 
 /* Subtle inner shimmer pseudo-element */
@@ -175,7 +174,7 @@ input[type="date"].color-scheme-light::-webkit-calendar-picker-indicator:hover {
   top: 0; left: 0; right: 0; bottom: 0;
   border-radius: inherit;
   padding: 1px;
-  background: linear-gradient(to bottom right, rgba(255,255,255,0.6), rgba(255,255,255,0.05));
+  background: linear-gradient(to bottom right, rgba(255,255,255,0.2), rgba(255,255,255,0.01));
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
@@ -185,11 +184,11 @@ input[type="date"].color-scheme-light::-webkit-calendar-picker-indicator:hover {
 .package-card:hover {
   transform: translateY(-10px);
   box-shadow:
-    0 20px 50px rgba(31, 38, 135, 0.15),
-    0 4px 16px rgba(0, 0, 0, 0.06),
-    0 0 25px rgba(212, 175, 55, 0.08),
-    inset 0 1px 1px rgba(255, 255, 255, 0.9);
-  border-color: rgba(212, 175, 55, 0.35);
+    0 20px 50px rgba(0, 0, 0, 0.5),
+    0 4px 16px rgba(0, 0, 0, 0.3),
+    0 0 25px rgba(212, 175, 55, 0.15),
+    inset 0 1px 1px rgba(255, 255, 255, 0.5);
+  border-color: rgba(212, 175, 55, 0.4);
 }
 
 /* ============================================
