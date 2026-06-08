@@ -244,14 +244,21 @@
 
     <!-- Scripts -->
     <script>
+        // إجبار المتصفح على البقاء في الأعلى
         if ('scrollRestoration' in history) {
             history.scrollRestoration = 'manual';
         }
-        window.addEventListener('beforeunload', function () {
-            window.scrollTo(0, 0);
+        window.scrollTo(0, 0);
+
+        window.addEventListener('load', function () {
+            setTimeout(function () {
+                window.scrollTo(0, 0);
+            }, 10);
         });
-        window.onload = function () {
-            window.scrollTo(0, 0);
+
+        // تنظيف الرابط لمنع التمرير التلقائي للباقات
+        if (window.location.hash) {
+            history.replaceState("", document.title, window.location.pathname + window.location.search);
         }
     </script>
     <script src="script.js"></script>

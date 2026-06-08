@@ -274,14 +274,12 @@ input[type="date"].color-scheme-dark::-webkit-calendar-picker-indicator:hover {
 }
 
 /* ============================================
-   Scroll Triggered Animations (Smooth Flowing)
+   Scroll Triggered Animations (Fast & Smooth)
    ============================================ */
 .fade-in-up {
   opacity: 0;
-  transform: translateY(100px);
-  /* زدنا المسافة باش تبان تطلع مليح */
-  transition: opacity 1.5s ease-out, transform 1.5s ease-out;
-  /* 1.5s هي المدة المثالية للانسيابية */
+  transform: translateY(50px);
+  transition: opacity 0.6s cubic-bezier(0.25, 1, 0.5, 1), transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .fade-in-up.visible {
@@ -290,15 +288,15 @@ input[type="date"].color-scheme-dark::-webkit-calendar-picker-indicator:hover {
 }
 
 .stagger-1 {
-  transition-delay: 0.1s;
+  transition-delay: 0.05s;
 }
 
 .stagger-2 {
-  transition-delay: 0.3s;
+  transition-delay: 0.15s;
 }
 
 .stagger-3 {
-  transition-delay: 0.5s;
+  transition-delay: 0.25s;
 }
 
 /* ============================================
