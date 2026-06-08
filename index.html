@@ -65,14 +65,14 @@
 
     <!-- Navigation -->
     <nav class="fixed w-full z-50 glass-nav transition-all duration-300">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="text-2xl font-bold tracking-widest uppercase text-white">
-                CINE<span class="text-accent-gold">PRO</span>
+        <div class="max-w-7xl mx-auto px-6 py-4 flex flex-col items-center justify-center gap-3">
+            <div class="text-2xl font-black tracking-widest uppercase text-white font-sans">
+                CINEMA<span class="text-[#FF003C] drop-shadow-[0_0_12px_rgba(255,0,60,0.9)]">PRO</span>
             </div>
-            <ul class="hidden md:flex space-x-8 space-x-reverse text-sm font-medium text-slate-300">
-                <li><a href="#hero" class="hover:text-accent-gold transition-colors">الرئيسية</a></li>
-                <li><a href="#packages" class="hover:text-accent-gold transition-colors">الباقات</a></li>
-                <li><a href="#booking" class="hover:text-accent-gold transition-colors">احجز الآن</a></li>
+            <ul class="flex space-x-6 space-x-reverse text-xs md:text-sm font-medium text-slate-300">
+                <li><a href="#hero" class="hover:text-[#FF003C] transition-colors">الرئيسية</a></li>
+                <li><a href="#packages" class="hover:text-[#FF003C] transition-colors">الباقات</a></li>
+                <li><a href="#booking" class="hover:text-[#FF003C] transition-colors">احجز الآن</a></li>
             </ul>
         </div>
     </nav>
@@ -109,7 +109,8 @@
             <h1
                 class="text-3xl md:text-5xl lg:text-6xl font-extrabold mb-4 md:mb-6 leading-tight slide-down-text text-white drop-shadow-2xl">
                 وثّق لحظة تخرجك <br>
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-accent-gold-light to-accent-gold">بلمسة
+                <span
+                    class="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-[#FF003C] drop-shadow-[0_0_15px_rgba(255,0,60,0.7)]">بلمسة
                     سينمائية</span>
             </h1>
 
@@ -118,9 +119,9 @@
                 تصوير احترافي، فيديوهات سينمائية، ولقطات جوية تخلّد أجمل أيام حياتك.
             </p>
 
-            <a href="#booking"
-                class="btn-glowing inline-block px-8 py-3 md:px-10 md:py-4 rounded-full text-white font-bold text-base md:text-lg bg-gradient-to-r from-yellow-500 to-yellow-700 hover:from-yellow-400 hover:to-yellow-600 transition-all shadow-[0_0_20px_rgba(212,175,55,0.4)] hover:shadow-[0_0_30px_rgba(212,175,55,0.7)]">
-                احجز باقتك الآن
+            <a href="#packages"
+                class="btn-glowing inline-block px-8 py-3 md:px-10 md:py-4 rounded-full text-white font-bold text-base md:text-lg bg-gradient-to-r from-[#FF003C] to-red-800 hover:from-red-500 hover:to-[#FF003C] transition-all shadow-[0_0_20px_rgba(255,0,60,0.4)] hover:shadow-[0_0_30px_rgba(255,0,60,0.8)]">
+                شاهد العروض
             </a>
         </div>
     </section>
@@ -242,6 +243,12 @@
     </footer>
 
     <!-- Scripts -->
+    <script>
+        if (history.scrollRestoration) {
+            history.scrollRestoration = 'manual';
+        }
+        window.scrollTo(0, 0);
+    </script>
     <script src="script.js"></script>
 </body>
 
