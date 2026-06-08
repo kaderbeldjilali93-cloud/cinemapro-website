@@ -16,8 +16,8 @@ document.addEventListener('DOMContentLoaded', () => {
             id: 'basic',
             name: 'الباقة الأساسية',
             subtitle: 'ذكريات',
-            price: '١٥,٠٠٠',
-            currency: 'د.ج',
+            price: '15,000',
+            currency: 'دج',
             popular: false,
             description: 'مثالية لتوثيق اللحظات الأساسية بجمال وبساطة، صور تخلد فرحتك.',
             features: [
@@ -31,8 +31,8 @@ document.addEventListener('DOMContentLoaded', () => {
             id: 'premium',
             name: 'باقة الامتياز',
             subtitle: 'سينمائي',
-            price: '٢٨,٠٠٠',
-            currency: 'د.ج',
+            price: '28,000',
+            currency: 'دج',
             popular: true,
             badge: 'الأكثر طلباً',
             description: 'تجربة متكاملة تركز على المشاعر واللحظات العفوية لفيلم لا يُنسى.',
@@ -48,8 +48,8 @@ document.addEventListener('DOMContentLoaded', () => {
             id: 'vip',
             name: 'باقة الـ VIP',
             subtitle: 'الذهبية',
-            price: '٤٥,٠٠٠',
-            currency: 'د.ج',
+            price: '45,000',
+            currency: 'دج',
             popular: false,
             description: 'التجربة القصوى والأكثر فخامة لتوثيق مميز، من السماء إلى الأرض.',
             features: [
@@ -68,10 +68,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // Render Packages
     packagesData.forEach((pkg, index) => {
         const isPopular = pkg.popular ? 'popular' : '';
-        const badgeHTML = pkg.badge ? `<div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-accent-gold to-yellow-500 text-royal-dark font-extrabold px-5 py-1.5 rounded-full text-sm shadow-lg z-20 whitespace-nowrap">${pkg.badge}</div>` : '';
+        const badgeHTML = pkg.badge ? `<div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-accent-red to-red-700 text-white font-extrabold px-5 py-1.5 rounded-full text-sm shadow-lg z-20 whitespace-nowrap">${pkg.badge}</div>` : '';
         
         // Background glow for popular package
-        const popularGlow = pkg.popular ? `<div class="absolute -inset-1 bg-gradient-to-br from-accent-gold/20 to-yellow-500/5 blur-2xl rounded-3xl -z-10 opacity-70"></div>` : '';
+        const popularGlow = pkg.popular ? `<div class="absolute -inset-1 bg-gradient-to-br from-accent-red/20 to-red-700/5 blur-2xl rounded-3xl -z-10 opacity-70"></div>` : '';
         
         // Render Feature list
         const featuresHTML = pkg.features.map(feature => `
@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
             ${badgeHTML}
             ${popularGlow}
             <div class="mb-8 relative z-10">
-                <h3 class="text-xl text-accent-gold font-bold mb-2 tracking-wide">${pkg.subtitle}</h3>
+                <h3 class="text-xl text-accent-red font-bold mb-2 tracking-wide">${pkg.subtitle}</h3>
                 <h2 class="text-3xl font-extrabold text-white mb-4">${pkg.name}</h2>
                 <p class="text-gray-400 text-sm h-12 leading-relaxed opacity-80">${pkg.description}</p>
             </div>
@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
             </ul>
             
             <div class="mt-auto relative z-10">
-                <button onclick="selectPackage('${pkg.id}')" class="w-full py-4 rounded-xl font-bold transition-all text-lg ${pkg.popular ? 'bg-gradient-to-r from-accent-gold to-yellow-500 text-royal-dark hover:shadow-[0_0_20px_rgba(212,175,55,0.4)]' : 'bg-white/5 text-white hover:bg-white/10 border border-white/10 hover:border-accent-gold/50'}">
+                <button onclick="selectPackage('${pkg.id}')" class="w-full py-4 rounded-xl font-bold transition-all text-lg ${pkg.popular ? 'bg-gradient-to-r from-accent-red to-red-700 text-white hover:shadow-[0_0_20px_rgba(229,9,20,0.4)]' : 'bg-white/5 text-white hover:bg-white/10 border border-white/10 hover:border-accent-red/50'}">
                     اختيار الباقة
                 </button>
             </div>
@@ -183,10 +183,10 @@ window.selectPackage = function(packageId) {
     // Highlight effect on select input to draw user's attention
     setTimeout(() => {
         select.focus();
-        select.classList.add('ring-4', 'ring-accent-gold/50', 'border-accent-gold');
+        select.classList.add('ring-4', 'ring-accent-red/50', 'border-accent-red');
         setTimeout(() => {
             select.blur();
-            select.classList.remove('ring-4', 'ring-accent-gold/50', 'border-accent-gold');
+            select.classList.remove('ring-4', 'ring-accent-red/50', 'border-accent-red');
         }, 1500);
     }, 500); // small delay to let scroll finish
 };
