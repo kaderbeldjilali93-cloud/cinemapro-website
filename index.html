@@ -79,35 +79,38 @@
 
     <!-- Hero Section -->
     <section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden">
-        
+
         <!-- Background Image Container (Absolute full cover for both Mobile and Desktop) -->
         <div class="absolute inset-0 w-full h-full z-0 bg-deep-bg">
-            <picture>
-                <!-- Desktop Image -->
+            <picture class="absolute inset-0 w-full h-full">
                 <source media="(min-width: 768px)" srcset="assets/1.png">
-                <!-- Mobile Image -->
-                <img src="assets/2.jpg" alt="Graduation Background"
+                <img src="assets/2.png" alt="Graduation Background"
                     class="absolute inset-0 w-full h-full object-cover object-top md:object-center slide-up-img">
             </picture>
             <!-- Global dark overlays removed. Image is 100% visible and vibrant. -->
         </div>
 
         <!-- Text Container (Floating over background, centered in negative space) -->
-        <div class="relative z-10 px-6 w-full max-w-4xl mx-auto flex flex-col items-center justify-center text-center mt-12 md:mt-0">
-            
-            <!-- Localized Soft Radial Gradient strictly behind the text container -->
-            <div class="absolute inset-[-4rem] md:inset-[-6rem] bg-[radial-gradient(ellipse_at_center,_rgba(5,8,16,0.95)_0%,_rgba(5,8,16,0.6)_50%,_transparent_80%)] z-[-1] pointer-events-none rounded-full blur-xl"></div>
+        <div
+            class="relative z-10 px-6 w-full max-w-4xl mx-auto flex flex-col items-center justify-center text-center mt-12 md:mt-0">
 
-            <h1 class="text-3xl md:text-5xl lg:text-6xl font-extrabold mb-4 md:mb-6 leading-tight slide-down-text text-white drop-shadow-2xl">
+            <!-- Localized Soft Radial Gradient strictly behind the text container -->
+            <div
+                class="absolute inset-[-4rem] md:inset-[-6rem] bg-[radial-gradient(ellipse_at_center,_rgba(5,8,16,0.95)_0%,_rgba(5,8,16,0.6)_50%,_transparent_80%)] z-[-1] pointer-events-none rounded-full blur-xl">
+            </div>
+
+            <h1
+                class="text-3xl md:text-5xl lg:text-6xl font-extrabold mb-4 md:mb-6 leading-tight slide-down-text text-white drop-shadow-2xl">
                 وثّق لحظة تخرجك <br>
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-accent-gold-light to-accent-gold">بلمسة سينمائية</span>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-accent-gold-light to-accent-gold">بلمسة
+                    سينمائية</span>
             </h1>
-            
+
             <p class="text-sm md:text-xl text-slate-200 mb-8 md:mb-10 max-w-xl mx-auto font-light leading-relaxed slide-down-text drop-shadow-lg"
                 style="animation-delay: 0.15s;">
                 تصوير احترافي، فيديوهات سينمائية، ولقطات جوية تخلّد أجمل أيام حياتك.
             </p>
-            
+
             <a href="#booking"
                 class="btn-glowing inline-block px-8 py-3 md:px-10 md:py-4 rounded-full text-white font-bold text-base md:text-lg bg-gradient-to-r from-yellow-500 to-yellow-700 hover:from-yellow-400 hover:to-yellow-600 transition-all shadow-[0_0_20px_rgba(212,175,55,0.4)] hover:shadow-[0_0_30px_rgba(212,175,55,0.7)]">
                 احجز باقتك الآن
