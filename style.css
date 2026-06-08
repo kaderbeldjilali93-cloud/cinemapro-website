@@ -35,6 +35,7 @@ body {
     );
   background-attachment: fixed;
   color: var(--text-primary);
+  overflow-x: hidden;
 }
 
 /* Custom Scrollbar (Dark theme) */
@@ -73,17 +74,33 @@ body {
 }
 
 .glass-nav {
-  background: rgba(15, 23, 42, 0.5);
-  backdrop-filter: blur(24px) saturate(180%);
-  -webkit-backdrop-filter: blur(24px) saturate(180%);
-  border-bottom: 1px solid var(--glass-border);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  background: transparent;
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  border-bottom: 1px solid transparent;
+  box-shadow: none;
+  transition: all 0.4s ease-in-out;
+}
+
+.glass-nav .nav-links {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.4s ease-in-out;
 }
 
 .glass-nav.scrolled {
   background: rgba(10, 15, 30, 0.85);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.6);
   border-bottom: 1px solid rgba(255, 0, 60, 0.25);
+}
+
+.glass-nav.scrolled .nav-links {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
 }
 
 .glass-form {
@@ -309,6 +326,15 @@ input[type="date"].color-scheme-dark::-webkit-calendar-picker-indicator:hover {
 .fade-in-right.visible {
   opacity: 1;
   transform: translateX(0);
+}
+
+@media (max-width: 768px) {
+  .fade-in-left, .fade-in-right {
+    transform: translateY(40px);
+  }
+  .fade-in-left.visible, .fade-in-right.visible {
+    transform: translateY(0);
+  }
 }
 
 .stagger-1 {
