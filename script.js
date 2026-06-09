@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             id: 'basic',
             name: 'لمة لحباب',
-            subtitle: 'صور فقط',
+            subtitle: '',
             price: '5000دج (500ألف)',
             popular: false,
             description: 'توثيق دافئ لأجمل لحظاتك مع العائلة والأصدقاء بصور احترافية.',

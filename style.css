@@ -329,10 +329,14 @@ input[type="date"].color-scheme-dark::-webkit-calendar-picker-indicator:hover {
 }
 
 @media (max-width: 768px) {
-  .fade-in-left, .fade-in-right {
+
+  .fade-in-left,
+  .fade-in-right {
     transform: translateY(40px);
   }
-  .fade-in-left.visible, .fade-in-right.visible {
+
+  .fade-in-left.visible,
+  .fade-in-right.visible {
     transform: translateY(0);
   }
 }
@@ -397,4 +401,18 @@ input[type="date"].color-scheme-dark::-webkit-calendar-picker-indicator:hover {
   transform: translateY(2px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* يمكنك إضافة هذا الجزء في نهاية ملف style.css لضبط حجم السعر */
+.package-card span.text-3xl {
+  font-size: 1.65rem !important;
+  /* تصغير الكلمة قليلاً لتلائم السطر على الشاشات المختلفة */
+  white-space: nowrap;
+  /* منع انقسام السعر إلى سطرين */
+}
+
+@media (min-width: 768px) {
+  .package-card span.text-3xl {
+    font-size: 1.75rem !important;
+  }
 }
