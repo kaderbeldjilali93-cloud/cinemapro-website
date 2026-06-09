@@ -132,14 +132,14 @@
     <!-- Packages Section -->
     <section id="packages" class="py-24 px-4 relative z-10">
         <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16 fade-in-up">
-                <h2 class="text-4xl md:text-5xl font-bold mb-4 text-white">اختر باقتك</h2>
-                <p class="text-slate-400 max-w-xl mx-auto">باقات صُممت لتناسب تطلعاتك وتوثق نجاحك بأفضل صورة</p>
-            </div>
+            <div class="text-center mb-16"></div>
+            <h2 class="text-4xl md:text-5xl font-bold mb-4 text-white">اختر باقتك</h2>
+            <p class="text-slate-400 max-w-xl mx-auto">باقات صُممت لتناسب تطلعاتك وتوثق نجاحك بأفضل صورة</p>
+        </div>
 
-            <div id="packages-container" class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch max-w-6xl mx-auto">
-                <!-- Packages will be injected here dynamically via script.js -->
-            </div>
+        <div id="packages-container" class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch max-w-6xl mx-auto">
+            <!-- Packages will be injected here dynamically via script.js -->
+        </div>
         </div>
     </section>
 
@@ -148,87 +148,87 @@
 
     <!-- Booking Form Section -->
     <section id="booking" class="py-24 px-4 relative z-10">
-        <div class="max-w-3xl mx-auto relative fade-in-up">
-            <!-- Ambient Glow behind form -->
-            <div
-                class="absolute -inset-4 bg-gradient-to-r from-accent-gold/10 to-blue-500/10 rounded-[32px] blur-2xl opacity-60">
+        <div class="max-w-3xl mx-auto relative"></div>
+        <!-- Ambient Glow behind form -->
+        <div
+            class="absolute -inset-4 bg-gradient-to-r from-accent-gold/10 to-blue-500/10 rounded-[32px] blur-2xl opacity-60">
+        </div>
+
+        <div class="glass-form p-8 md:p-12 rounded-3xl relative">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl md:text-4xl font-bold mb-2 text-white">أكد حجزك الآن</h2>
+                <p class="text-slate-400">سنقوم بالتواصل معك في أقرب وقت لتأكيد التفاصيل</p>
             </div>
 
-            <div class="glass-form p-8 md:p-12 rounded-3xl relative">
-                <div class="text-center mb-10">
-                    <h2 class="text-3xl md:text-4xl font-bold mb-2 text-white">أكد حجزك الآن</h2>
-                    <p class="text-slate-400">سنقوم بالتواصل معك في أقرب وقت لتأكيد التفاصيل</p>
-                </div>
-
-                <form id="booking-form" class="space-y-6">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div class="form-group relative">
-                            <label for="fullName" class="block text-sm font-medium text-slate-300 mb-2">الاسم
-                                الكامل</label>
-                            <input type="text" id="fullName" required placeholder="محمد أحمد"
-                                class="w-full rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-accent-gold/50 focus:border-transparent transition-all glass-input">
-                        </div>
-                        <div class="form-group relative">
-                            <label for="whatsapp" class="block text-sm font-medium text-slate-300 mb-2">رقم
-                                الهاتف</label>
-                            <input type="tel" id="whatsapp" required dir="ltr" placeholder="06XXXXXXXX"
-                                class="w-full rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-accent-gold/50 focus:border-transparent transition-all glass-input text-right">
-                        </div>
-                    </div>
-
+            <form id="booking-form" class="space-y-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div class="form-group relative">
-                        <label for="university" class="block text-sm font-medium text-slate-300 mb-2">الجامعة
-                            والكلية</label>
-                        <input type="text" id="university" required placeholder="جامعة ابن خلدون بتيارت"
+                        <label for="fullName" class="block text-sm font-medium text-slate-300 mb-2">الاسم
+                            الكامل</label>
+                        <input type="text" id="fullName" required placeholder="محمد أحمد"
                             class="w-full rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-accent-gold/50 focus:border-transparent transition-all glass-input">
                     </div>
-
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div class="form-group relative">
-                            <label for="date" class="block text-sm font-medium text-slate-300 mb-2">تاريخ المناقشة
-                                (المتوقع)</label>
-                            <input type="date" id="date" required
-                                class="w-full rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-accent-gold/50 focus:border-transparent transition-all glass-input color-scheme-dark">
-                        </div>
-                        <div class="form-group relative">
-                            <label for="packageSelect" class="block text-sm font-medium text-slate-300 mb-2">إختر
-                                الباقة</label>
-                            <div class="relative">
-                                <select id="packageSelect" required
-                                    class="w-full rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-accent-gold/50 focus:border-transparent transition-all glass-input appearance-none cursor-pointer">
-                                    <option value="" disabled selected class="text-slate-400">اختر باقة...</option>
-                                    <!-- Options injected via JS -->
-                                </select>
-                                <div
-                                    class="pointer-events-none absolute inset-y-0 left-0 flex items-center px-4 text-slate-400">
-                                    <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M19 9l-7 7-7-7"></path>
-                                    </svg>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="form-group relative">
+                        <label for="whatsapp" class="block text-sm font-medium text-slate-300 mb-2">رقم
+                            الهاتف</label>
+                        <input type="tel" id="whatsapp" required dir="ltr" placeholder="06XXXXXXXX"
+                            class="w-full rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-accent-gold/50 focus:border-transparent transition-all glass-input text-right">
                     </div>
+                </div>
 
-                    <div class="pt-6">
-                        <button type="submit" id="submitBtn"
-                            class="w-full btn-glowing relative overflow-hidden px-8 py-4 rounded-xl text-white font-bold text-lg bg-gradient-to-r from-[#FF003C] to-red-800 hover:from-red-500 hover:to-[#FF003C] transition-all flex items-center justify-center shadow-[0_0_20px_rgba(255,0,60,0.4)] hover:shadow-[0_0_30px_rgba(255,0,60,0.8)]">
-                            <span id="btnText">تأكيد الحجز الآن</span>
-                            <div id="btnLoader"
-                                class="hidden absolute inset-0 flex items-center justify-center bg-red-600 rounded-xl">
-                                <svg class="animate-spin h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg"
-                                    fill="none" viewBox="0 0 24 24">
-                                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor"
-                                        stroke-width="4"></circle>
-                                    <path class="opacity-75" fill="currentColor"
-                                        d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
-                                    </path>
+                <div class="form-group relative">
+                    <label for="university" class="block text-sm font-medium text-slate-300 mb-2">الجامعة
+                        والكلية</label>
+                    <input type="text" id="university" required placeholder="جامعة ابن خلدون بتيارت"
+                        class="w-full rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-accent-gold/50 focus:border-transparent transition-all glass-input">
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="form-group relative">
+                        <label for="date" class="block text-sm font-medium text-slate-300 mb-2">تاريخ المناقشة
+                            (المتوقع)</label>
+                        <input type="date" id="date" required
+                            class="w-full rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-accent-gold/50 focus:border-transparent transition-all glass-input color-scheme-dark">
+                    </div>
+                    <div class="form-group relative">
+                        <label for="packageSelect" class="block text-sm font-medium text-slate-300 mb-2">إختر
+                            الباقة</label>
+                        <div class="relative">
+                            <select id="packageSelect" required
+                                class="w-full rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-accent-gold/50 focus:border-transparent transition-all glass-input appearance-none cursor-pointer">
+                                <option value="" disabled selected class="text-slate-400">اختر باقة...</option>
+                                <!-- Options injected via JS -->
+                            </select>
+                            <div
+                                class="pointer-events-none absolute inset-y-0 left-0 flex items-center px-4 text-slate-400">
+                                <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 9l-7 7-7-7"></path>
                                 </svg>
                             </div>
-                        </button>
+                        </div>
                     </div>
-                </form>
-            </div>
+                </div>
+
+                <div class="pt-6">
+                    <button type="submit" id="submitBtn"
+                        class="w-full btn-glowing relative overflow-hidden px-8 py-4 rounded-xl text-white font-bold text-lg bg-gradient-to-r from-[#FF003C] to-red-800 hover:from-red-500 hover:to-[#FF003C] transition-all flex items-center justify-center shadow-[0_0_20px_rgba(255,0,60,0.4)] hover:shadow-[0_0_30px_rgba(255,0,60,0.8)]">
+                        <span id="btnText">تأكيد الحجز الآن</span>
+                        <div id="btnLoader"
+                            class="hidden absolute inset-0 flex items-center justify-center bg-red-600 rounded-xl">
+                            <svg class="animate-spin h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                viewBox="0 0 24 24">
+                                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor"
+                                    stroke-width="4"></circle>
+                                <path class="opacity-75" fill="currentColor"
+                                    d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
+                                </path>
+                            </svg>
+                        </div>
+                    </button>
+                </div>
+            </form>
+        </div>
         </div>
     </section>
 
