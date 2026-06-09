@@ -244,19 +244,12 @@
 
     <!-- Scripts -->
     <script>
-        // إجبار المتصفح على البقاء في الأعلى
+        // هذا السطر يضمن للمتصفح أنه عند عمل Refresh يرجع المستخدم للأعلى تلقائياً وبدون أي قفزات مفاجئة أثناء التصفح
         if ('scrollRestoration' in history) {
             history.scrollRestoration = 'manual';
         }
-        window.scrollTo(0, 0);
 
-        window.addEventListener('load', function () {
-            setTimeout(function () {
-                window.scrollTo(0, 0);
-            }, 10);
-        });
-
-        // تنظيف الرابط لمنع التمرير التلقائي للباقات
+        // تنظيف الرابط لمنع التمرير التلقائي للباقات عند تحديث الصفحة
         if (window.location.hash) {
             history.replaceState("", document.title, window.location.pathname + window.location.search);
         }

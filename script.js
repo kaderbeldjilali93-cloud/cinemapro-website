@@ -73,12 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const card = document.createElement('div');
 
-        // تحديد اتجاه الحركة لكل بطاقة (0 هي الأولى، 1 هي الثانية، 2 هي الثالثة)
-        let animClass = 'fade-in-up';
-        if (index === 0 || index === 2) animClass = 'fade-in-left';
-        if (index === 1) animClass = 'fade-in-right';
-
-        card.className = `package-card glass-card rounded-3xl p-8 relative ${animClass} stagger-${index + 1} flex flex-col h-full`;
+        card.className = `package-card glass-card rounded-3xl p-8 relative flex flex-col h-full`;
 
         card.innerHTML = `
             <div class="mb-8 relative z-10 text-center">
@@ -112,26 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
         packageSelect.appendChild(option);
     });
 
-    // --- 3. Scroll Animations (Intersection Observer) ---
-    const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.15
-    };
 
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                observer.unobserve(entry.target); // Run animation only once
-            }
-        });
-    }, observerOptions);
-
-    // تفعيل المراقبة لجميع الحركات الجديدة
-    document.querySelectorAll('.fade-in-up, .fade-in-left, .fade-in-right').forEach(element => {
-        observer.observe(element);
-    });
 
     // --- 4. Form Handling & Telegram Integration ---
     const form = document.getElementById('booking-form');
