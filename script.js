@@ -158,8 +158,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const packageName = packageSelect.options[packageSelect.selectedIndex].text;
 
         // ==========================================
-        const telegramBotToken = '8807976727:AAHkwNZSg9P7Go5cprUE7KQbGce11eo6S2Y'
-        const chatId = '-1491880675'
+        const telegramBotToken = '8807976727:AAHkwNZSg9P7Go5cprUE7KQbGce11eo6S2Y';
+        const chatId = '1491880675';
         // ==========================================
 
         // تصميم الرسالة اللي راح توصلك في التليغرام
